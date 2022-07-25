@@ -25,7 +25,7 @@ Certified: No
 For the procedure to configure a connector, click [here](https://docs.fortinet.com/document/fortisoar/0.0.0/configuring-a-connector/1/configuring-a-connector)
 ### Configuration parameters
 <p>In FortiSOAR&trade;, on the Connectors page, click the <strong>Google Cloud Compute</strong> connector row (if you are in the <strong>Grid</strong> view on the Connectors page) and in the <strong>Configurations&nbsp;</strong> tab enter the required configuration details:&nbsp;</p>
-<table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Service Account Key Contents<br></td><td>The service account private key file contents(JSON).<br>
+<table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Upload Service Account JSON File<br></td><td>The service account private key file.<br>
 </tbody></table>
 
 ## Actions supported by the connector
@@ -251,7 +251,7 @@ The output contains the following populated JSON schema:
 #### Input parameters
 <table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Include all scopes<br></td><td>Indicates whether every visible scope for each scope type (zone, region, global) should be included in the response. For resource types which predate this field, if this flag is omitted or false, only scopes of the scope types where the resource type is expected to be found will be included.<br>
 </td></tr><tr><td>Filter<br></td><td>A filter expression that filters resources listed in the response.<br>
-</td></tr><tr><td>Orderby<br></td><td>Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name.<br>
+</td></tr><tr><td>OrderBy<br></td><td>Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name.<br>
 </td></tr><tr><td>Page Token<br></td><td>Specifies a page token to use.<br>
 </td></tr><tr><td>Max Results<br></td><td>The maximum number of results per page that should be returned.<br>
 </td></tr><tr><td>Return partial success<br></td><td>Opt-in for partial success behavior which provides partial results in  case of failure. The default value is false.<br>
@@ -271,12 +271,12 @@ The output contains the following populated JSON schema:
 ## Included playbooks
 The `Sample - google-cloud-compute - 1.0.0` playbook collection comes bundled with the Google Cloud Compute connector. These playbooks contain steps using which you can perform all supported actions. You can see bundled playbooks in the **Automation** > **Playbooks** section in FortiSOAR<sup>TM</sup> after importing the Google Cloud Compute connector.
 
-- List Instances within Zone
+- Aggregated List Instances
+- Delete Instance
 - Get Instance Details
+- List Instances within Zone
+- Reset Instance
 - Start Instance
 - Stop Instance
-- Delete Instance
-- Reset Instance
-- Aggregated List Instances
 
 **Note**: If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.

@@ -4,6 +4,7 @@
   FORTINET CONFIDENTIAL & FORTINET PROPRIETARY SOURCE CODE
   Copyright end """
 
+import os
 import json
 import sys
 import google.cloud.compute_v1 as compute
@@ -11,6 +12,7 @@ import google.api_core.retry as retry
 from google.api_core.exceptions import NotFound
 from google.oauth2 import service_account
 from connectors.core.connector import get_logger, ConnectorError
+from connectors.cyops_utilities.builtins import download_file_from_cyops
 
 logger = get_logger('google-cloud-compute')
 
@@ -19,13 +21,16 @@ class GoogleCloudCompute(object):
 
     def __init__(self, config):
         self.client_details = dict()
-        json_file_contents = config.get('auth')
         scopes = ['https://www.googleapis.com/auth/cloud-platform']
-        auth_contents = str(json_file_contents).replace("\'", "\"").replace("\\\\", "\\")
-        self.auth_details = json.loads(auth_contents)
-        self.p_id = self.auth_details.get('project_id')
-        self.credentials = service_account.Credentials.from_service_account_info(
-            self.auth_details, scopes=scopes)
+        try:
+            cert_file_iri = config.get('auth_file').get('@id')
+            filename = download_file_from_cyops(cert_file_iri).get('cyops_file_path')
+            file_data = os.path.join('/tmp/', filename)
+            self.credentials = service_account.Credentials.from_service_account_file(file_data, scopes=scopes)
+            self.p_id = self.credentials.project_id
+        except Exception as err:
+            logger.exception("{0}".format(str(err)))
+            raise ConnectorError("{0}".format(str(err)))
 
     def create_clients(self):
         try:

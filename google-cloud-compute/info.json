@@ -13,14 +13,14 @@
     "configuration": {
         "fields": [
             {
-                "title": "Service Account Key Contents",
-                "type": "json",
-                "name": "auth",
+                "title": "Upload Service Account JSON File",
+                "type": "file",
+                "name": "auth_file",
                 "required": true,
                 "visible": true,
                 "editable": true,
-                "tooltip": "The service account private key file contents(JSON).",
-                "description": "The service account private key file contents(JSON)."
+                "tooltip": "The service account private key file.",
+                "description": "The service account private key file."
             }
         ]
     },

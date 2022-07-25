@@ -2,7 +2,7 @@
   "type": "workflow_collections",
   "data": [
     {
-      "uuid": "7ee8a23b-e407-4241-8fb1-3beeacbb793b",
+      "uuid": "3e7e809d-762e-4002-ad68-0caf8c36f4e9",
       "@type": "WorkflowCollection",
       "name": "Sample - Google Cloud Compute - 1.0.0",
       "description": "Google Compute Engine's tooling and workflow supports to create advanced networks on the regional levels and load balancing capabilities in cloud computing. This connector facilitates automated operation related to GCE operations.",
@@ -15,8 +15,8 @@
       "workflows": [
         {
           "@type": "Workflow",
-          "uuid": "89ffbf55-4c1a-4467-893d-b08636a33146",
-          "collection": "/api/3/workflow_collections/7ee8a23b-e407-4241-8fb1-3beeacbb793b",
+          "uuid": "afdcec4c-765a-468d-b2dc-647a8b610807",
+          "collection": "/api/3/workflow_collections/3e7e809d-762e-4002-ad68-0caf8c36f4e9",
           "triggerLimit": null,
           "description": "Retrieves the list of instances contained within the specified zone.",
           "name": "List Instances within Zone",
@@ -30,16 +30,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/9d7db769-6b35-4afd-876e-6f4f902d06ff",
+          "triggerStep": "/api/3/workflow_steps/00a2d928-f3dd-479b-91c4-c2a5002e1ced",
           "steps": [
             {
-              "uuid": "9d7db769-6b35-4afd-876e-6f4f902d06ff",
+              "uuid": "00a2d928-f3dd-479b-91c4-c2a5002e1ced",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "1044ebc4-e711-4e5a-9fd5-8bc2b8d0ca18",
+                "route": "1a5cf4fc-9b83-4cf7-9808-a4d6027b8377",
                 "title": "Google Cloud Compute: List Instances within Zone",
                 "resources": [
                   "alerts"
@@ -59,7 +59,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "a61c1766-4342-45bb-85c0-26107f012c3e",
+              "uuid": "0b96fbf6-1210-4d53-83f1-49248a39b3e9",
               "@type": "WorkflowStep",
               "name": "List Instances within Zone",
               "description": null,
@@ -84,19 +84,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "f3b1a57a-6db3-4cb9-a7d9-c539fcda1dfd",
+              "uuid": "c63979ae-8e6f-48b2-8904-4cae20f55581",
               "label": null,
               "isExecuted": false,
               "name": "Start-> List Instances within Zone",
-              "sourceStep": "/api/3/workflow_steps/9d7db769-6b35-4afd-876e-6f4f902d06ff",
-              "targetStep": "/api/3/workflow_steps/a61c1766-4342-45bb-85c0-26107f012c3e"
+              "sourceStep": "/api/3/workflow_steps/00a2d928-f3dd-479b-91c4-c2a5002e1ced",
+              "targetStep": "/api/3/workflow_steps/0b96fbf6-1210-4d53-83f1-49248a39b3e9"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "21fd5ae2-b954-441f-9943-a6bcbbe54e7e",
-          "collection": "/api/3/workflow_collections/7ee8a23b-e407-4241-8fb1-3beeacbb793b",
+          "uuid": "15e6268f-0c6c-4018-b016-ce528944075d",
+          "collection": "/api/3/workflow_collections/3e7e809d-762e-4002-ad68-0caf8c36f4e9",
           "triggerLimit": null,
           "description": "Returns the specified Instance resource details.",
           "name": "Get Instance Details",
@@ -110,16 +110,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/e4728eaf-56ba-4616-991f-a6f38b5565bc",
+          "triggerStep": "/api/3/workflow_steps/f4898765-fbf9-4bea-9315-feeb9387a363",
           "steps": [
             {
-              "uuid": "e4728eaf-56ba-4616-991f-a6f38b5565bc",
+              "uuid": "f4898765-fbf9-4bea-9315-feeb9387a363",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "cda41c41-8b9a-4232-9d5d-c06fc30a70e9",
+                "route": "48362d71-4140-4122-a0fe-2c1fd4eca07b",
                 "title": "Google Cloud Compute: Get Instance Details",
                 "resources": [
                   "alerts"
@@ -139,7 +139,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "5dc0c7de-1124-4171-a00f-bc08b28a84a9",
+              "uuid": "8d59dc77-dacd-466e-9036-a1b0eb8bb384",
               "@type": "WorkflowStep",
               "name": "Get Instance Details",
               "description": null,
@@ -164,19 +164,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "a85b9db1-2bc6-4fb0-9340-3425a85bfa17",
+              "uuid": "1f012ff8-bcb2-48fb-9f6c-7eceec6575a6",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Get Instance Details",
-              "sourceStep": "/api/3/workflow_steps/e4728eaf-56ba-4616-991f-a6f38b5565bc",
-              "targetStep": "/api/3/workflow_steps/5dc0c7de-1124-4171-a00f-bc08b28a84a9"
+              "sourceStep": "/api/3/workflow_steps/f4898765-fbf9-4bea-9315-feeb9387a363",
+              "targetStep": "/api/3/workflow_steps/8d59dc77-dacd-466e-9036-a1b0eb8bb384"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "ac0380bc-b945-4f4c-a5ec-7b1aa91e902b",
-          "collection": "/api/3/workflow_collections/7ee8a23b-e407-4241-8fb1-3beeacbb793b",
+          "uuid": "1f9b2ced-10bf-400c-bd83-35d7c26182ab",
+          "collection": "/api/3/workflow_collections/3e7e809d-762e-4002-ad68-0caf8c36f4e9",
           "triggerLimit": null,
           "description": "Starts an instance that you have specified using the resource ID.",
           "name": "Start Instance",
@@ -190,16 +190,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/bb3b788c-a5a2-48ef-b9d6-4cc82c76510c",
+          "triggerStep": "/api/3/workflow_steps/60a304b2-192a-46ba-b03e-795dd5d84dc0",
           "steps": [
             {
-              "uuid": "bb3b788c-a5a2-48ef-b9d6-4cc82c76510c",
+              "uuid": "60a304b2-192a-46ba-b03e-795dd5d84dc0",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "9f1cc66e-8721-41b3-ae41-d8ded2d83e63",
+                "route": "16347ba2-fe20-4126-bd01-5ec9bdf23888",
                 "title": "Google Cloud Compute: Start Instance",
                 "resources": [
                   "alerts"
@@ -219,7 +219,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "757f39f0-0ff4-4504-a5e4-8d89c47ac783",
+              "uuid": "084af7ca-f244-40b2-a4e7-bd61407ab6a0",
               "@type": "WorkflowStep",
               "name": "Start Instance",
               "description": null,
@@ -244,19 +244,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "ceba0d6d-570a-444c-8ce0-fda899525358",
+              "uuid": "e0d50909-04e6-467a-a4a9-1ae33d761364",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Start Instance",
-              "sourceStep": "/api/3/workflow_steps/bb3b788c-a5a2-48ef-b9d6-4cc82c76510c",
-              "targetStep": "/api/3/workflow_steps/757f39f0-0ff4-4504-a5e4-8d89c47ac783"
+              "sourceStep": "/api/3/workflow_steps/60a304b2-192a-46ba-b03e-795dd5d84dc0",
+              "targetStep": "/api/3/workflow_steps/084af7ca-f244-40b2-a4e7-bd61407ab6a0"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "84bf4ddd-b8a0-485a-8d1f-54cb2d5756af",
-          "collection": "/api/3/workflow_collections/7ee8a23b-e407-4241-8fb1-3beeacbb793b",
+          "uuid": "36e932e0-4741-4b9a-86ad-05c2b5ea7c00",
+          "collection": "/api/3/workflow_collections/3e7e809d-762e-4002-ad68-0caf8c36f4e9",
           "triggerLimit": null,
           "description": "Stops an instance that you have specified using the resource ID.",
           "name": "Stop Instance",
@@ -270,16 +270,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/664e7769-adfc-4e59-b3ac-86513d651448",
+          "triggerStep": "/api/3/workflow_steps/b5690996-ab5b-4e83-9e14-db964838bef3",
           "steps": [
             {
-              "uuid": "664e7769-adfc-4e59-b3ac-86513d651448",
+              "uuid": "b5690996-ab5b-4e83-9e14-db964838bef3",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "d8611b5e-6860-42cb-9781-1e89f698edef",
+                "route": "b6804f6f-2681-4645-94ee-07097cc5523b",
                 "title": "Google Cloud Compute: Stop Instance",
                 "resources": [
                   "alerts"
@@ -299,7 +299,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "8c9c650f-06a9-4061-adb4-109f5897ff84",
+              "uuid": "83debecb-fe1d-4e89-ba56-22747222c2fe",
               "@type": "WorkflowStep",
               "name": "Stop Instance",
               "description": null,
@@ -324,19 +324,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "a4152427-f484-4365-bdd2-54c3c8309013",
+              "uuid": "70bbc78a-f73b-46b9-a0e2-981faebedaaa",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Stop Instance",
-              "sourceStep": "/api/3/workflow_steps/664e7769-adfc-4e59-b3ac-86513d651448",
-              "targetStep": "/api/3/workflow_steps/8c9c650f-06a9-4061-adb4-109f5897ff84"
+              "sourceStep": "/api/3/workflow_steps/b5690996-ab5b-4e83-9e14-db964838bef3",
+              "targetStep": "/api/3/workflow_steps/83debecb-fe1d-4e89-ba56-22747222c2fe"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "04c1a893-383a-4471-87dc-d7eb2776043b",
-          "collection": "/api/3/workflow_collections/7ee8a23b-e407-4241-8fb1-3beeacbb793b",
+          "uuid": "3a9c17eb-9f1e-414f-b538-85b11d696aee",
+          "collection": "/api/3/workflow_collections/3e7e809d-762e-4002-ad68-0caf8c36f4e9",
           "triggerLimit": null,
           "description": "Deletes an instance resource that you have specified using the resource ID.",
           "name": "Delete Instance",
@@ -350,16 +350,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/1b8207e8-dcde-4c7a-bad3-e3adaf8d6a8e",
+          "triggerStep": "/api/3/workflow_steps/795075f0-34f5-4251-9a4e-bd473b4e5453",
           "steps": [
             {
-              "uuid": "1b8207e8-dcde-4c7a-bad3-e3adaf8d6a8e",
+              "uuid": "795075f0-34f5-4251-9a4e-bd473b4e5453",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "d8bdf940-da86-4fbd-82d2-8d9879754d19",
+                "route": "56cebc36-5bf3-4c1f-968b-13c3faab00c8",
                 "title": "Google Cloud Compute: Delete Instance",
                 "resources": [
                   "alerts"
@@ -379,7 +379,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "36e9c28b-209b-4d6a-b181-c5b873e65283",
+              "uuid": "d36335f0-4d3a-436b-9f69-872d49882c5d",
               "@type": "WorkflowStep",
               "name": "Delete Instance",
               "description": null,
@@ -404,19 +404,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "b02d725e-e0e6-4554-b17e-362d681a1fbb",
+              "uuid": "1ec39008-1e9b-45cf-ad61-55890c906d25",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Delete Instance",
-              "sourceStep": "/api/3/workflow_steps/1b8207e8-dcde-4c7a-bad3-e3adaf8d6a8e",
-              "targetStep": "/api/3/workflow_steps/36e9c28b-209b-4d6a-b181-c5b873e65283"
+              "sourceStep": "/api/3/workflow_steps/795075f0-34f5-4251-9a4e-bd473b4e5453",
+              "targetStep": "/api/3/workflow_steps/d36335f0-4d3a-436b-9f69-872d49882c5d"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "03127006-f814-4c7a-9829-1db8e94130f9",
-          "collection": "/api/3/workflow_collections/7ee8a23b-e407-4241-8fb1-3beeacbb793b",
+          "uuid": "951ba6a1-3ee2-4047-9157-6f0d1955601b",
+          "collection": "/api/3/workflow_collections/3e7e809d-762e-4002-ad68-0caf8c36f4e9",
           "triggerLimit": null,
           "description": "This is a hard reset the VM does not do a graceful shutdown. Performs a reset on the instance that you have specified using the resource ID.",
           "name": "Reset Instance",
@@ -430,16 +430,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/096da0f7-c025-4c7f-b3f1-3a63719f79bc",
+          "triggerStep": "/api/3/workflow_steps/78cba0e3-ce89-4008-8b8a-369d35a88a0c",
           "steps": [
             {
-              "uuid": "096da0f7-c025-4c7f-b3f1-3a63719f79bc",
+              "uuid": "78cba0e3-ce89-4008-8b8a-369d35a88a0c",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "3b3d02a2-310d-4315-b6f7-84835225ee96",
+                "route": "ff4d4a53-5f18-45e3-b5ed-0d5afb13893a",
                 "title": "Google Cloud Compute: Reset Instance",
                 "resources": [
                   "alerts"
@@ -459,7 +459,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "7a9ddc00-236b-4bb0-b06c-d6f0dae6ab3c",
+              "uuid": "daf35401-4b88-49d1-8619-a64579e05057",
               "@type": "WorkflowStep",
               "name": "Reset Instance",
               "description": null,
@@ -484,19 +484,19 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "a0de0b95-0b31-4652-9654-108664dea472",
+              "uuid": "e1e577e8-fcea-4480-97aa-32b5a0e2df3a",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Reset Instance",
-              "sourceStep": "/api/3/workflow_steps/096da0f7-c025-4c7f-b3f1-3a63719f79bc",
-              "targetStep": "/api/3/workflow_steps/7a9ddc00-236b-4bb0-b06c-d6f0dae6ab3c"
+              "sourceStep": "/api/3/workflow_steps/78cba0e3-ce89-4008-8b8a-369d35a88a0c",
+              "targetStep": "/api/3/workflow_steps/daf35401-4b88-49d1-8619-a64579e05057"
             }
           ]
         },
         {
           "@type": "Workflow",
-          "uuid": "5842c8f3-0656-4790-903b-dcd41ca1e38f",
-          "collection": "/api/3/workflow_collections/7ee8a23b-e407-4241-8fb1-3beeacbb793b",
+          "uuid": "f3a932c4-8948-4bd1-9597-c46f8827e729",
+          "collection": "/api/3/workflow_collections/3e7e809d-762e-4002-ad68-0caf8c36f4e9",
           "triggerLimit": null,
           "description": "Retrieves an aggregated list of all of the instances in your project across all regions and zones.",
           "name": "Aggregated List Instances",
@@ -510,16 +510,16 @@
           "singleRecordExecution": false,
           "parameters": [],
           "synchronous": false,
-          "triggerStep": "/api/3/workflow_steps/da2f224c-548e-43e0-bdfa-3ff57858393b",
+          "triggerStep": "/api/3/workflow_steps/83fc42a6-025f-4799-be4a-9c4e0baebb5a",
           "steps": [
             {
-              "uuid": "da2f224c-548e-43e0-bdfa-3ff57858393b",
+              "uuid": "83fc42a6-025f-4799-be4a-9c4e0baebb5a",
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "status": null,
               "arguments": {
-                "route": "b8951611-e41b-490f-8973-2c81e59e1222",
+                "route": "211bdb30-565d-463e-8318-6e0592b0ba0f",
                 "title": "Google Cloud Compute: Aggregated List Instances",
                 "resources": [
                   "alerts"
@@ -539,7 +539,7 @@
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
             },
             {
-              "uuid": "14e55e5b-ed0c-4e9a-bd2b-16f489b830a6",
+              "uuid": "42b8264b-fa5e-466c-9f98-cd95b0403e64",
               "@type": "WorkflowStep",
               "name": "Aggregated List Instances",
               "description": null,
@@ -567,12 +567,12 @@
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "uuid": "9dd73f9e-7ee9-4fcc-80b8-49e3d19beb83",
+              "uuid": "566d8c9b-4094-4fbb-a2c4-99fa365b3ddf",
               "label": null,
               "isExecuted": false,
               "name": "Start-> Aggregated List Instances",
-              "sourceStep": "/api/3/workflow_steps/da2f224c-548e-43e0-bdfa-3ff57858393b",
-              "targetStep": "/api/3/workflow_steps/14e55e5b-ed0c-4e9a-bd2b-16f489b830a6"
+              "sourceStep": "/api/3/workflow_steps/83fc42a6-025f-4799-be4a-9c4e0baebb5a",
+              "targetStep": "/api/3/workflow_steps/42b8264b-fa5e-466c-9f98-cd95b0403e64"
             }
           ]
         }
