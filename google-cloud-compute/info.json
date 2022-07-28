@@ -4,10 +4,10 @@
     "label": "Google Cloud Compute",
     "description": "Google Compute Engine's tooling and workflow supports to create advanced networks on the regional levels and load balancing capabilities in cloud computing. This connector facilitates automated operation related to GCE operations.",
     "publisher": "spryIQ.co",
-    "icon_small_name": "gcc32x32.png",
-    "icon_large_name": "gcc80x80.png",
+    "icon_small_name": "small.png",
+    "icon_large_name": "large.png",
     "category": "Compute Platform",
-    "help_online": "https://github.com/bidisha-spryiq/connector-google-cloud-compute/blob/develop/docs/GoogleCloudComputeConnectorDoc.md",
+    "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.0/google-cloud-compute/350/google-cloud-compute-v1-0-0",
     "cs_compatible": true,
     "cs_approved": false,
     "configuration": {
