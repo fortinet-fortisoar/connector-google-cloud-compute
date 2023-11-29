@@ -494,7 +494,7 @@
 			"description": "set-user defined label on instance",
 			"enabled": true,
 			"category": "investigation",
-			"annotation": "set device label",
+			"annotation": "set_device_label",
 			"parameters": [
 				{
 					"title": "Zone",
