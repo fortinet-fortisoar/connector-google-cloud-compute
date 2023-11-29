@@ -487,6 +487,60 @@
                 "warning": {},
                 "unreachables": []
             }
-        }
+        },
+        {
+			"operation": "set_label",
+			"title": "Set Label",
+			"description": "set-user defined label on instance",
+			"enabled": true,
+			"category": "investigation",
+			"annotation": "set device label",
+			"parameters": [
+				{
+					"title": "Zone",
+					"type": "text",
+					"name": "zone",
+					"required": true,
+					"visible": true,
+					"editable": true,
+					"tooltip": "The name of the zone for this request."
+				},
+                {
+					"title": "instance_name",
+					"type": "text",
+					"name": "instance_name",
+					"required": true,
+					"visible": true,
+					"editable": true,
+					"tooltip": "The name of the instance for this request."
+				},
+                {
+					"title": "new_key",
+					"type": "text",
+					"name": "new_key",
+					"required": true,
+					"visible": true,
+					"editable": true,
+					"tooltip": "New Label Key"
+				},
+				{
+					"title": "new_value",
+					"type": "text",
+					"name": "new_value",
+					"required": true,
+					"visible": true,
+					"editable": true,
+					"tooltip": "New Label value"
+				}
+                ],
+			"output_schema": {
+				"kind": "",
+				"id": "",
+				"items": [],
+				"nextPageToken": "",
+				"selfLink": "",
+				"warning": {}
+			}
+		}
     ]
 }

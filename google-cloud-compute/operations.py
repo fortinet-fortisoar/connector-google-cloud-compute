@@ -221,6 +221,44 @@ class GoogleCloudCompute(object):
                 data_res.append(str(instance[1]))
         return data_res
 
+    @retry.Retry()
+    def set_label(self, params):
+        zone = params.get('zone')
+        instance_name = params.get('instance_name')
+        client_types = ['instances_client']
+        clients = self.make_client_call(client_types)
+        ins_client = clients[client_types[0]]
+        request = compute.ListInstancesRequest(
+            project=self.p_id, zone=zone)
+        instances = ins_client.list(request=request)
+        data_res = []
+        for instance in instances:
+            if instance.name == instance_name:
+                data_res_item = {
+                    'name': instance.name,
+                    'zone': instance.zone,
+                    'labels': instance.labels,
+                    'label_fingerprint': instance.label_fingerprint
+                }
+                data_res.append(data_res_item)
+                # Add a label to the instance
+                zone = params.get('zone')
+                project = self.p_id
+                labels = {params.get('new_key'): params.get('new_value')}
+                instance_name = params.get('instance_name')
+                fingerprint = data_res_item['label_fingerprint']
+                request = compute.SetLabelsInstanceRequest(
+                    project=project,
+                    zone=zone,
+                    instance=instance_name,
+                    instances_set_labels_request_resource=compute.InstancesSetLabelsRequest(
+                        labels=labels,
+                        label_fingerprint=fingerprint
+                    )
+                )
+                ins_client.set_labels(request=request)
+        return data_res
+
 
 def _run_operation(config, params):
     compute_obj = GoogleCloudCompute(config)
