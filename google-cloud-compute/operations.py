@@ -5,7 +5,6 @@
   Copyright end """
 
 import os
-import json
 import sys
 import google.cloud.compute_v1 as compute
 import google.api_core.retry as retry
