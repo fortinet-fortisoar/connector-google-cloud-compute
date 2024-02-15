@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "label": "Google Cloud Compute",
   "description": "Google Compute Engine's tooling and workflow supports to create advanced networks on the regional levels and load balancing capabilities in cloud computing. This connector facilitates automated operation related to GCE operations.",
-  "publisher": "spryIQ.co",
+  "publisher": "Fortinet CSE",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
   "category": "Compute Platform",
