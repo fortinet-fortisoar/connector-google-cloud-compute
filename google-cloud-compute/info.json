@@ -7,7 +7,7 @@
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
   "category": "Compute Platform",
-  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.0/google-cloud-compute/350/google-cloud-compute-v1-0-0",
+  "help_online": "https://github.com/fortinet-fortisoar/connector-google-cloud-compute/blob/release/1.1.0/docs/GoogleCloudComputeConnectorDoc.md",
   "cs_compatible": true,
   "cs_approved": false,
   "configuration": {
