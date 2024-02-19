@@ -49,7 +49,7 @@
 <tr><td>Delete Instance<br></td><td>Deletes an instance resource that you have specified using the resource ID.<br></td><td>delete_instance <br/>Miscellaneous<br></td></tr>
 <tr><td>Reset Instance<br></td><td>This is a hard reset the VM does not do a graceful shutdown. Performs a reset on the instance that you have specified using the resource ID.<br></td><td>reset_instance <br/>Miscellaneous<br></td></tr>
 <tr><td>Aggregated List Instances<br></td><td>Retrieves an aggregated list of all of the instances in your project across all regions and zones.<br></td><td>get_aggregated_list_instances <br/>Investigation<br></td></tr>
-<tr><td>Set Instance Label<br></td><td>set user defined Sets labels on an instance<br></td><td>set_device_label <br/>Investigation<br></td></tr>
+<tr><td>Set Instance Label<br></td><td>Set user defined labels on a Specified instance<br></td><td>set_device_label <br/>Investigation<br></td></tr>
 </tbody></table>
 
 <h3>operation: List Instances within Zone</h3>
