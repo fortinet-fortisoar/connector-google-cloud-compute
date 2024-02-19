@@ -491,7 +491,7 @@
     {
       "operation": "set_label",
       "title": "Set Instance Label",
-      "description": "set user defined Sets labels on an instance",
+      "description": "Set user defined labels on a Specified instance",
       "enabled": true,
       "category": "investigation",
       "annotation": "set_device_label",
