@@ -586,7 +586,7 @@
           "name": "Set Instance Label",
           "aliasName": null,
           "tag": "#Google Cloud Compute",
-          "description": "Stops an instance that you have specified using the resource ID.",
+          "description": "Set user defined labels on a Specified instance",
           "isActive": false,
           "debug": false,
           "singleRecordExecution": false,
