@@ -121,7 +121,58 @@ class GoogleCloudCompute(object):
         ins_client = clients[client_types[0]]
         instance_info = ins_client.get(project=self.p_id, zone=zone, instance=instance)
         logger.info('Instance details: {0}'.format(str(instance_info)))
-        return str(instance_info)
+        instance_data = {
+          'KeyRevocationActionType': str(instance_info.KeyRevocationActionType),
+          'LabelsEntry': str(instance_info.LabelsEntry),
+          'PrivateIpv6GoogleAccess': str(instance_info.PrivateIpv6GoogleAccess),
+          'Status': str(instance_info.Status),
+          'advanced_machine_features': str(instance_info.advanced_machine_features),
+          'can_ip_forward': str(instance_info.can_ip_forward),
+          'confidential_instance_config': str(instance_info.confidential_instance_config),
+          'cpu_platform': str(instance_info.cpu_platform),
+          'creation_timestamp': str(instance_info.creation_timestamp),
+          'deletion_protection': str(instance_info.deletion_protection),
+          'description': str(instance_info.description),
+          'disks': str(instance_info.disks),
+          'display_device': str(instance_info.display_device),
+          'fingerprint': str(instance_info.fingerprint),
+          'guest_accelerators': str(instance_info.guest_accelerators),
+          'hostname': str(instance_info.hostname),
+          'id': str(instance_info.id),
+          'instance_encryption_key': str(instance_info.instance_encryption_key),
+          'key_revocation_action_type': str(instance_info.key_revocation_action_type),
+          'kind': str(instance_info.kind),
+          'label_fingerprint': str(instance_info.label_fingerprint),
+          'labels': str(instance_info.labels),
+          'last_start_timestamp': str(instance_info.last_start_timestamp),
+          'last_stop_timestamp': str(instance_info.last_stop_timestamp),
+          'last_suspended_timestamp': str(instance_info.last_suspended_timestamp),
+          'machine_type': str(instance_info.machine_type),
+          'metadata': str(instance_info.metadata),
+          'min_cpu_platform': str(instance_info.min_cpu_platform),
+          'name': str(instance_info.name),
+          'network_interfaces': str(instance_info.network_interfaces),
+          'network_performance_config': str(instance_info.network_performance_config),
+          'params': str(instance_info.params),
+          'private_ipv6_google_access': str(instance_info.private_ipv6_google_access),
+          'reservation_affinity': str(instance_info.reservation_affinity),
+          'resource_policies': str(instance_info.resource_policies),
+          'resource_status': str(instance_info.resource_status),
+          'satisfies_pzs': str(instance_info.satisfies_pzs),
+          'scheduling': str(instance_info.scheduling),
+          'self_link': str(instance_info.self_link),
+          'service_accounts': str(instance_info.service_accounts),
+          'shielded_instance_config': str(instance_info.shielded_instance_config),
+          'shielded_instance_integrity_policy': str(instance_info.shielded_instance_integrity_policy),
+          'source_machine_image': str(instance_info.source_machine_image),
+          'source_machine_image_encryption_key': str(instance_info.source_machine_image_encryption_key),
+          'start_restricted': str(instance_info.start_restricted),
+          'status': str(instance_info.status),
+          'status_message': str(instance_info.status_message),
+          'tags': str(instance_info.tags),
+          'zone': str(instance_info.zone), 
+        }
+        return instance_data
 
     @retry.Retry()
     def start_instance(self, params):
@@ -259,6 +310,37 @@ class GoogleCloudCompute(object):
                 ins_client.set_labels(request=request)
         return data_res
 
+    @retry.Retry()
+    def disk_snapshot(self, params):
+        zone = params.get('zone')
+        instance = params.get('instance_name')
+        client_types = ['instances_client', 'disks_client']
+        clients = self.make_client_call(client_types)
+        ins_client = clients[client_types[0]]
+        disk_client = clients[client_types[1]]
+        instance_info = ins_client.get(project=self.p_id, zone=zone, instance=instance)
+        logger.info('Instance details: {0}'.format(str(instance_info)))
+        disk_info = str(instance_info.disks)
+        disks = re.findall(r'source: "(.*?)"', disk_info)
+        curr_dt = datetime.now()
+        timestamp = int(round(curr_dt.timestamp()))
+        time = str(timestamp)
+        for disk in disks:
+            disk_name = disk.strip('"')  # Remove quotes from disk name
+            disk_name = disk.strip('[]')  # Remove brackets from disk name
+            disk_name = disk.split('/')[-1]
+            request = compute.CreateSnapshotDiskRequest(
+                project=self.p_id,
+                zone=zone,
+                disk=disk_name,
+                snapshot_resource=compute.Snapshot(
+                    name = disk_name + time,
+                    description = disk_name + '-security-snapshot',
+                )
+            )
+            snap = disk_client.create_snapshot(request=request)
+            logger.info('Snapshot created successfully.')
+            return disk_name
 
 def _run_operation(config, params):
     compute_obj = GoogleCloudCompute(config)
