@@ -545,6 +545,42 @@
         "selfLink": "",
         "warning": {}
       }
-    }
+    },
+    {
+      "operation": "disk_snapshot",
+      "title": "Disk Snapshot",
+      "description": "takes a snapshot of persistent disk",
+      "enabled": true,
+      "category": "investigation",
+      "annotation": "take_disk_snapshot",
+      "parameters": [
+          {
+              "title": "Zone",
+              "type": "text",
+              "name": "zone",
+              "required": true,
+              "visible": true,
+              "editable": true,
+              "tooltip": "The name of the zone for this request."
+          },
+          {
+              "title": "instance_name",
+              "type": "text",
+              "name": "instance_name",
+              "required": true,
+              "visible": true,
+              "editable": true,
+              "tooltip": "The name of the instance for this request."
+          }
+      ],
+      "output_schema": {
+          "kind": "",
+          "id": "",
+          "items": [],
+          "nextPageToken": "",
+          "selfLink": "",
+          "warning": {}
+      }
+   }
   ]
 }
