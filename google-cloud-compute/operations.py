@@ -7,6 +7,8 @@ Copyright end
 
 import os
 import sys
+import re
+from datetime import datetime
 import google.cloud.compute_v1 as compute
 import google.api_core.retry as retry
 from google.api_core.exceptions import NotFound
